@@ -1,0 +1,54 @@
+﻿<div ng-controller="teamCtrl">
+    <h2>Shooter's {{yearAbrv}} Team Registration</h2>
+
+    <p>In order to register a team, you must have at least two players. If you are registering a two or three person team, we will attempt to assign additional players to your team in order to form a foursome. If you do not have at least two players for a team, we encourage you to <a href="#player">register as a single player</a> and we will make sure that you are assigned to a team.</p>
+
+    <form name="teamForm" novalidate>
+        <div class="well">
+            <div class="form-group">
+                <label>Team Name:</label>
+                <input name="teamName" class="form-control" ng-model="data.team.name" required />
+            </div>
+
+            <div><label>Add Player:</label></div>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td><input type="text" class="form-control" placeholder="First Name"></td>
+                        <td><input type="text" class="form-control" placeholder="Last Name"></td>
+                        <td><input type="text" class="form-control" placeholder="E-Mail"></td>
+                        <td><input type="text" class="form-control" placeholder="T-Shirt"></td>
+                        <td><button class="btn btn-success">Add</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br /><br />
+
+            <div ng-hide="players.length == 0">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>E-Mail</th>
+                            <th>T-Shirt</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="player in players">
+                            <td>{{player.firstName}}</td>
+                            <td>{{player.lastName}}</td>
+                            <td>{{player.email}}</td>
+                            <td>{{player.tshirt}}</td>
+                            <td>
+                                <button ng-click="remove(player.id)" class="btn btn-sm btn-warning">Remove</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>
