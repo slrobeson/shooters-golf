@@ -7,25 +7,32 @@
         <div class="well">
             <div class="form-group">
                 <label>Team Name:</label>
-                <input name="teamName" class="form-control" ng-model="data.team.name" required />
+                <input name="teamName" class="form-control" ng-model="team.name" required />
             </div>
 
             <div><label>Add Player:</label></div>
             <table class="table">
-                <tbody>
-                    <tr>
-                        <td><input type="text" class="form-control" placeholder="First Name"></td>
-                        <td><input type="text" class="form-control" placeholder="Last Name"></td>
-                        <td><input type="text" class="form-control" placeholder="E-Mail"></td>
-                        <td><input type="text" class="form-control" placeholder="T-Shirt"></td>
-                        <td><button class="btn btn-success">Add</button></td>
-                    </tr>
-                </tbody>
+                <tr>
+                    <td><input class="form-control" placeholder="First Name" ng-model="newPlayer.firstName"></td>
+                    <td><input class="form-control" placeholder="Last Name" ng-model="newPlayer.lastName"></td>
+                    <td><input type="email" class="form-control" placeholder="E-Mail" ng-model="newPlayer.email"></td>
+                    <td>
+                        <select class="form-control" ng-model="newPlayer.tshirt">
+                            <option value="" class="">Shirt Size</option>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                            <option>2XL</option>
+                            <option>3XL</option>
+                        </select>
+                    </td>
+                    <td><button ng-click="addPlayer(newPlayer)" class="btn btn-success">Add</button></td>
+                </tr>
             </table>
 
-            <br /><br />
-
-            <div ng-hide="players.length == 0">
+            <div ng-hide="team.players.length == 0">
+                <br />
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -37,18 +44,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="player in players">
+                        <tr ng-repeat="player in team.players">
                             <td>{{player.firstName}}</td>
                             <td>{{player.lastName}}</td>
                             <td>{{player.email}}</td>
                             <td>{{player.tshirt}}</td>
                             <td>
-                                <button ng-click="remove(player.id)" class="btn btn-sm btn-warning">Remove</button>
+                                <button ng-click="removePlayer($index)" class="btn btn-sm btn-warning">Remove</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+        </div>
+        <div class="pull-right">
+            <button type="submit" class="btn btn-default" ng-disabled="team.players.length < 2">Register Team</button>
         </div>
     </form>
 </div>

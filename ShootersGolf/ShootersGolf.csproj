@@ -81,15 +81,18 @@
     <Content Include="app\images\logo.png" />
     <Content Include="app\images\pdf-icon.jpg" />
     <Content Include="app\images\word-icon.gif" />
+    <Content Include="app\models.js" />
     <Content Include="app\views\about.html" />
     <Content Include="app\views\adminHeader.html" />
     <Content Include="app\views\adminHome.html" />
     <Content Include="app\views\adminSponsors.html" />
     <Content Include="app\views\adminTeams.html" />
     <Content Include="app\views\adminPlayers.html" />
+    <Content Include="app\views\confirmation.html" />
     <Content Include="app\views\footer.html" />
     <Content Include="app\views\header.html" />
     <Content Include="app\views\home.html" />
+    <Content Include="app\views\player.html" />
     <Content Include="app\views\register.html" />
     <Content Include="app\views\sidePanel.html" />
     <Content Include="app\views\sponsorship.html" />
@@ -107,6 +110,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="app.html" />
+    <Content Include="samples.html" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
@@ -124,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\PlayerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -143,7 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

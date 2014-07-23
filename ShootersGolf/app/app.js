@@ -9,6 +9,9 @@
         $routeProvider.when("/team", {
             templateUrl: "/app/views/team.html"
         });
+        $routeProvider.when("/player", {
+            templateUrl: "/app/views/player.html"
+        });
         $routeProvider.when("/sponsorship", {
             templateUrl: "/app/views/sponsorship.html"
         });

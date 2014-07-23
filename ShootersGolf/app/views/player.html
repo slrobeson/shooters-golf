@@ -1,0 +1,35 @@
+﻿<div ng-controller="playerCtrl">
+    <h2>Shooter's {{yearAbrv}} Player Registration</h2>
+    <p>Players registering as singles will be assigned to a foursome. We'll let you know who you are playing with during the check-in process on the day of the event.</p>
+
+    <form name="playerForm" novalidate>
+        <h3>Player Information:</h3>
+
+        <div class="row">
+            <div class="col-xs-3">
+                <input name="firstName" class="form-control" placeholder="First Name" ng-model="player.firstName">
+            </div>
+            <div class="col-xs-3">
+                <input name="lastName" class="form-control" placeholder="Last Name" ng-model="player.lastName">
+            </div>
+            <div class="col-xs-4">
+                <input name="email" type="email" class="form-control" placeholder="E-Mail" ng-model="player.email">
+            </div>
+            <div class="col-xs-2">
+                <select name="tshirt" class="form-control" ng-model="player.tshirt">
+                    <option value="" class="">Shirt Size</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>2XL</option>
+                    <option>3XL</option>
+                </select>
+            </div>
+        </div>
+        <br />
+        <div class="pull-right">
+            <button type="submit" ng-click="registerPlayer(player)" class="btn btn-default">Register</button>
+        </div>
+    </form>
+</div>
