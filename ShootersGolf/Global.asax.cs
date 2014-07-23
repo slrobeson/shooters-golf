@@ -28,8 +28,8 @@ namespace ShootersGolf
             var docStore = new EmbeddableDocumentStore { ConnectionStringName = "RavenDB" };
 #if DEBUG
             // Host the RavenDB Studio if running in debug mode.
-            docStore.UseEmbeddedHttpServer = true;
-            NonAdminHttp.EnsureCanListenToWhenInNonAdminContext(8080);
+            //docStore.UseEmbeddedHttpServer = true;
+            //NonAdminHttp.EnsureCanListenToWhenInNonAdminContext(8080);
 #endif
             //docStore.RegisterListener(new UniqueConstraintsStoreListener());
 

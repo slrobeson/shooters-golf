@@ -3,15 +3,13 @@
 
         $scope.team = team;
 
-        $scope.shirtsizes = shirtSizes;
-
         $scope.addPlayer = function (player) {
-            if (angular.isDefined(player) && angular.isDefined(player.firstName) && angular.isDefined(player.lastName) && angular.isDefined(player.email) && angular.isDefined(player.tshirt)) {
+            if (angular.isDefined(player) && angular.isDefined(player.firstName) && angular.isDefined(player.lastName) && angular.isDefined(player.email) && angular.isDefined(player.shirtsize)) {
                 team.players.push({
                     firstName: player.firstName,
                     lastName: player.lastName,
                     email: player.email,
-                    tshirt: player.tshirt
+                    shirtsize: player.shirtsize
                 });
             }
         };
@@ -19,10 +17,19 @@
         $scope.removePlayer = function (index) {
             team.players.splice(index, 1);
         };
+
+        $scope.registerTeam = function () {
+            $http.post("http://localhost:20534/api/teams", team)
+            .success(function (data) {
+                $location.path("/confirmation");
+            });
+        };
     })
-    .controller("playerCtrl", function ($scope, $http) {
-        $scope.registerPlayer(player)
-        {
-            $http.post(url, player);
+    .controller("playerCtrl", function ($scope, $http, $location) {
+        $scope.registerPlayer = function (player) {
+            $http.post("http://localhost:20534/api/players", player)
+                .success(function (data) {
+                    $location.path("/confirmation");
+                });
         }
     });

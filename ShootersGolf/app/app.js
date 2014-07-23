@@ -15,6 +15,9 @@
         $routeProvider.when("/sponsorship", {
             templateUrl: "/app/views/sponsorship.html"
         });
+        $routeProvider.when("/confirmation", {
+            templateUrl: "/app/views/confirmation.html"
+        });
         $routeProvider.otherwise({
             templateUrl: "/app/views/home.html"
         });

@@ -11,7 +11,7 @@ namespace ShootersGolf.Models
         public string Email { get; set; }
         public DateTime RegisteredDateTime { get; set; }
         public ShirtSize ShirtSize { get; set; }
-        public string TeamId { get; set; }
+        public string TeamName { get; set; }
     }
 
     public enum ShirtSize

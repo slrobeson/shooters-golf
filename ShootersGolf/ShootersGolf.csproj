@@ -109,6 +109,7 @@
   <ItemGroup>
     <Content Include="admin.html" />
     <Content Include="app\admin.js" />
+    <Content Include="app\adminControllers.js" />
     <Content Include="app\app.js" />
     <Content Include="app\controllers.js" />
     <Content Include="app\images\chad.jpg" />
@@ -163,13 +164,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\PlayerController.cs" />
+    <Compile Include="Controllers\PlayersController.cs" />
+    <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Indexes\PlayerCountByTeamIndex.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Sponsor.cs" />
+    <Compile Include="Models\RegisterTeamForm.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

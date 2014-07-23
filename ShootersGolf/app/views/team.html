@@ -17,14 +17,14 @@
                     <td><input class="form-control" placeholder="Last Name" ng-model="newPlayer.lastName"></td>
                     <td><input type="email" class="form-control" placeholder="E-Mail" ng-model="newPlayer.email"></td>
                     <td>
-                        <select class="form-control" ng-model="newPlayer.tshirt">
+                        <select name="shirtsize" class="form-control" ng-model="newPlayer.shirtsize">
                             <option value="" class="">Shirt Size</option>
-                            <option>S</option>
-                            <option>M</option>
-                            <option>L</option>
-                            <option>XL</option>
-                            <option>2XL</option>
-                            <option>3XL</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">2XL</option>
+                            <option value="XXXL">3XL</option>
                         </select>
                     </td>
                     <td><button ng-click="addPlayer(newPlayer)" class="btn btn-success">Add</button></td>
@@ -48,7 +48,7 @@
                             <td>{{player.firstName}}</td>
                             <td>{{player.lastName}}</td>
                             <td>{{player.email}}</td>
-                            <td>{{player.tshirt}}</td>
+                            <td>{{player.shirtsize}}</td>
                             <td>
                                 <button ng-click="removePlayer($index)" class="btn btn-sm btn-warning">Remove</button>
                             </td>
@@ -58,7 +58,7 @@
             </div>
         </div>
         <div class="pull-right">
-            <button type="submit" class="btn btn-default" ng-disabled="team.players.length < 2">Register Team</button>
+            <button type="submit" ng-click="registerTeam()" class="btn btn-default" ng-disabled="team.players.length < 2">Register Team</button>
         </div>
     </form>
 </div>

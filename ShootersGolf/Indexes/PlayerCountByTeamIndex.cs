@@ -8,7 +8,6 @@ namespace ShootersGolf.Indexes
     {
         public class ReduceResult
         {
-            public string TeamId { get; set; }
             public string TeamName { get; set; }
             public int PlayerCount { get; set; }
         }
@@ -16,13 +15,12 @@ namespace ShootersGolf.Indexes
         public PlayerCountByTeamIndex()
         {
             Map = assignedPlayers => from player in assignedPlayers
-                                     where !string.IsNullOrWhiteSpace(player.TeamId)
-                                     let team = LoadDocument<Team>(player.TeamId)
-                                     select new { TeamId = team.Id, TeamName = team.Name, PlayerCount = 1 };
+                                     where !string.IsNullOrWhiteSpace(player.TeamName)
+                                     select new { player.TeamName, PlayerCount = 1 };
 
             Reduce = results => from result in results
-                                group result by new { result.TeamId, result.TeamName } into g
-                                select new { g.Key.TeamId, g.Key.TeamName, PlayerCount = g.Sum(x => x.PlayerCount) };
+                                group result by new { result.TeamName } into g
+                                select new { g.Key.TeamName, PlayerCount = g.Sum(x => x.PlayerCount) };
         }
     }
 }

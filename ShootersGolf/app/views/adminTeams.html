@@ -1,1 +1,16 @@
-﻿Admin Teams Content
+﻿<div class="well" ng-controller="teamsCtrl">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Team Name</th>
+                <th># of Players</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="team in teams">
+                <td>{{team.teamName}}</td>
+                <td>{{team.playerCount}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
