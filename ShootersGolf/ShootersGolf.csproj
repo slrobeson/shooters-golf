@@ -131,6 +131,7 @@
     <Content Include="app\views\player.html" />
     <Content Include="app\views\register.html" />
     <Content Include="app\views\sidePanel.html" />
+    <Content Include="app\views\sponsor.html" />
     <Content Include="app\views\sponsorship.html" />
     <Content Include="app\views\team.html" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -165,6 +166,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\PlayersController.cs" />
+    <Compile Include="Controllers\SponsorsController.cs" />
     <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

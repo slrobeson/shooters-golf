@@ -12,6 +12,9 @@
         $routeProvider.when("/player", {
             templateUrl: "/app/views/player.html"
         });
+        $routeProvider.when("/sponsor", {
+            templateUrl: "/app/views/sponsor.html"
+        });
         $routeProvider.when("/sponsorship", {
             templateUrl: "/app/views/sponsorship.html"
         });

@@ -1,1 +1,18 @@
-﻿Admin Sponsors Content
+﻿<div class="well" ng-controller="sponsorsCtrl">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="sponsor in sponsors">
+                <td>{{sponsor.name}}</td>
+                <td>{{sponsor.email}}</td>
+                <td>{{sponsor.level}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

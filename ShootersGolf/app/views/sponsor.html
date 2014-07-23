@@ -1,0 +1,38 @@
+﻿<div ng-controller="sponsorCtrl">
+
+    <h2>Shooter's {{yearAbrv}} Sponsor Registration</h2>
+
+    <p>
+        All sponsorship proceeds go to The Chad Falco Foundation For Genetic Research at Nationwide's Children Hospital in Columbus, OH.
+    </p>
+    <p>
+        Can't decide between the hole and t-shirt sponsorships? Go with the "Shooter's Hole In One" sponsorship and get them both! More details
+        on available sponsorship opportunities can be found <a href="#sponsorship">here</a>.
+    </p>
+
+    <form name="sponsorForm">
+        <h3>Sponsor Information:</h3>
+
+        <div class="row">
+            <div class="col-xs-4">
+                <input name="name" class="form-control" placeholder="Name" ng-model="sponsor.name">
+            </div>
+            <div class="col-xs-4">
+                <input name="email" type="email" class="form-control" placeholder="E-Mail" ng-model="sponsor.email">
+            </div>
+            <div class="col-xs-4">
+                <select name="level" class="form-control" ng-model="sponsor.level">
+                    <option value="" class="">Sponsorship Level</option>
+                    <option value="Hole">Hole - $100</option>
+                    <option value="TShirt">T-Shirt - $100</option>
+                    <option value="HoleInOne">Hole In One - $150</option>
+                </select>
+            </div>
+        </div>
+        <br />
+        <div class="pull-right">
+            <button type="submit" ng-click="registerSponsor(sponsor)" class="btn btn-default">Register</button>
+        </div>
+
+    </form>
+</div>

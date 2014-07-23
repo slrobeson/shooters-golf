@@ -1,5 +1,5 @@
 ﻿angular.module("golfApp")
-    .controller("teamCtrl", function ($scope, $http) {
+    .controller("teamCtrl", function ($scope, $http, $location) {
 
         $scope.team = team;
 
@@ -31,5 +31,24 @@
                 .success(function (data) {
                     $location.path("/confirmation");
                 });
-        }
+        };
+    })
+    .controller("sponsorCtrl", function ($scope, $http, $location) {
+        $scope.registerSponsor = function (sponsor) {
+            $http.post("http://localhost:20534/api/sponsors", sponsor)
+                .success(function (data) {
+                    $location.path("/confirmation");
+                });
+        };
+    })
+    .controller("sponsorshipCtrl", function ($scope, $http, $location) {
+        $scope.sponsors = [];
+
+        $http.get("http://localhost:20534/api/sponsors")
+            .success(function (data) {
+                $scope.sponsors = data;
+            })
+            .error(function (error) {
+                $scope.data.error = error;
+            });
     });
