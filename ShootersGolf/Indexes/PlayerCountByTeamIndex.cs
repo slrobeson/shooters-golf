@@ -15,10 +15,10 @@ namespace ShootersGolf.Indexes
 
         public PlayerCountByTeamIndex()
         {
-            Map = players => from player in players
-                             where !string.IsNullOrWhiteSpace(player.TeamId)
-                             let team = LoadDocument<Team>(player.TeamId)
-                             select new { TeamId = team.Id, TeamName = team.Name, PlayerCount = 1 };
+            Map = assignedPlayers => from player in assignedPlayers
+                                     where !string.IsNullOrWhiteSpace(player.TeamId)
+                                     let team = LoadDocument<Team>(player.TeamId)
+                                     select new { TeamId = team.Id, TeamName = team.Name, PlayerCount = 1 };
 
             Reduce = results => from result in results
                                 group result by new { result.TeamId, result.TeamName } into g
