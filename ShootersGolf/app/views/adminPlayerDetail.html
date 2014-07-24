@@ -1,0 +1,11 @@
+﻿<div ng-controller="playerDetailCtrl">
+    <h3>Player Detail</h3>
+    <div class="well">
+        Name: {{player.lastName}}, {{player.firstName}}<br />
+        E-Mail: {{player.email}}<br />
+        Shirt Size: {{player.shirtSize}}<br />
+        Team: {{player.teamName}}
+    </div>
+
+    <button ng-click="deletePlayer()" class="btn btn-default">Delete Player</button>
+</div>
