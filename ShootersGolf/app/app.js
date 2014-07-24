@@ -1,4 +1,5 @@
 ﻿angular.module("golfApp", ["ngRoute"])
+    .constant("baseUrl", "http://localhost:20534/api/")
     .config(function ($routeProvider) {
         $routeProvider.when("/about", {
             templateUrl: "/app/views/about.html"

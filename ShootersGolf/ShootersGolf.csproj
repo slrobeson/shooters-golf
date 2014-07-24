@@ -112,6 +112,7 @@
     <Content Include="app\adminControllers.js" />
     <Content Include="app\app.js" />
     <Content Include="app\controllers.js" />
+    <Content Include="app\controllers\playersController.js" />
     <Content Include="app\images\chad.jpg" />
     <Content Include="app\images\childrenshospital.jpg" />
     <Content Include="app\images\logo.png" />
@@ -121,6 +122,7 @@
     <Content Include="app\views\about.html" />
     <Content Include="app\views\adminHeader.html" />
     <Content Include="app\views\adminHome.html" />
+    <Content Include="app\views\adminPlayerDetail.html" />
     <Content Include="app\views\adminSponsors.html" />
     <Content Include="app\views\adminTeams.html" />
     <Content Include="app\views\adminPlayers.html" />
@@ -148,12 +150,15 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="app.html" />
     <Content Include="samples.html" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-resource.min.js.map" />
     <None Include="Scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\bootstrap.js" />

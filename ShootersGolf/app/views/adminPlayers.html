@@ -1,4 +1,5 @@
-﻿<div class="well" ng-controller="playersCtrl">
+﻿<h3>Player Listing</h3>
+<div class="well" ng-controller="playersCtrl">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -10,7 +11,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="player in players">
-                <td>{{player.lastName}}, {{player.firstName}}</td>
+                <td><a href="#{{player.id}}">{{player.lastName}}, {{player.firstName}}</a></td>
                 <td>{{player.email}}</td>
                 <td>{{player.shirtSize}}</td>
                 <td>{{player.teamName}}</td>

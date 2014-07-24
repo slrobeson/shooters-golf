@@ -1,5 +1,5 @@
 ﻿angular.module("golfApp")
-    .controller("teamCtrl", function ($scope, $http, $location) {
+    .controller("teamCtrl", function ($scope, $http, $location, baseUrl) {
 
         $scope.team = team;
 

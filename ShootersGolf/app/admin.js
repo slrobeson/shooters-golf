@@ -1,7 +1,11 @@
 ﻿angular.module("adminApp", ["ngRoute"])
+    .constant("baseUrl", "http://localhost:20534/api/")
     .config(function ($routeProvider) {
         $routeProvider.when("/players", {
             templateUrl: "/app/views/adminPlayers.html"
+        });
+        $routeProvider.when("/players/:id", {
+            templateUrl: "/app/views/adminPlayerDetail.html"
         });
         $routeProvider.when("/teams", {
             templateUrl: "/app/views/adminTeams.html"
