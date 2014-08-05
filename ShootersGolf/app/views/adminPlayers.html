@@ -1,21 +1,27 @@
-﻿<h3>Player Listing</h3>
-<div class="well" ng-controller="playersCtrl">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Shirt Size</th>
-                <th>Team</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="player in players">
-                <td><a href="#{{player.id}}">{{player.lastName}}, {{player.firstName}}</a></td>
-                <td>{{player.email}}</td>
-                <td>{{player.shirtSize}}</td>
-                <td>{{player.teamName}}</td>
-            </tr>
-        </tbody>
-    </table>
+﻿<div ng-controller="playersCtrl">
+
+    <div>
+        <h3>Player Listing <span class="pull-right small">Shirt Orders: [S - {{(players | filter: {shirtSize: 1}).length}}] [M - {{(players | filter: {shirtSize: 2}).length}}] [L - {{(players | filter: {shirtSize: 3}).length}}] [XL - {{(players | filter: {shirtSize: 4}).length}}] [2XL - {{(players | filter: {shirtSize: 5}).length}}] [3XL - {{(players | filter: {shirtSize: 6}).length}}]</span></h3>
+    </div>
+
+    <div class="well">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Shirt Size</th>
+                    <th>Team</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="player in players | orderBy:'lastName'">
+                    <td><a href="#{{player.id}}">{{player.lastName}}, {{player.firstName}}</a></td>
+                    <td>{{player.email}}</td>
+                    <td>{{player.shirtSize | shirtSizeAsText}}</td>
+                    <td>{{player.teamName}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

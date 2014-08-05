@@ -4,8 +4,15 @@
         Name: {{player.lastName}}, {{player.firstName}}<br />
         E-Mail: {{player.email}}<br />
         Shirt Size: {{player.shirtSize}}<br />
-        Team: {{player.teamName}}
+        Team: 
+        <span ng-hide="player.teamName == null">{{player.teamName}}</span>
+        <span ng-show="player.teamName == null">
+            <select ng-model="team" ng-options="item.teamName for item in teams | filter:availableTeams">
+                <option value="">(Pick One)</option>
+            </select>
+            <button ng-click="addTeam(team)" class="btn btn-default">Add</button>
+        </span>
     </div>
 
-    <button ng-click="deletePlayer()" class="btn btn-default">Delete Player</button>
+    <button ng-click="deletePlayer(player.id)" class="btn btn-default">Delete Player</button>
 </div>

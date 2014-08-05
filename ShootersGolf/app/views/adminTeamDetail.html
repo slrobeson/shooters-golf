@@ -1,0 +1,10 @@
+﻿<div ng-controller="teamDetailCtrl">
+    <h3>Team Details</h3>
+    <div class="well">
+        <h4>{{players[0].teamName}}</h4>
+
+        <ol>
+            <li ng-repeat="player in players | orderBy:'lastName'">{{player.firstName}} {{player.lastName}}</li>
+        </ol>
+    </div>   
+</div>

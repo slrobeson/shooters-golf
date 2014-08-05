@@ -27,7 +27,6 @@ namespace ShootersGolf.Controllers
         {
             var current = DateTime.Now;
             var teamId = "teams/" + team.Name;
-            // Logic to check for unique team name. If unique continue...
 
             using (var session = Global.DocumentStore.OpenSession())
             {
@@ -36,14 +35,17 @@ namespace ShootersGolf.Controllers
 
                 session.Store(new Team(), Etag.Empty, teamId);
 
-                foreach (var player in team.Players)
+                if (team.Players != null)
                 {
-                    player.RegisteredDateTime = current;
-                    player.TeamName = team.Name;
+                    foreach (var player in team.Players)
+                    {
+                        player.RegisteredDateTime = current;
+                        player.TeamName = team.Name;
 
-                    session.Store(player);
+                        session.Store(player);
+                    }
                 }
-
+ 
                 session.SaveChanges();
 
                 return new HttpResponseMessage(HttpStatusCode.Created);

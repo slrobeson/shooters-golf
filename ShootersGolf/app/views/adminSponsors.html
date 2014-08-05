@@ -9,10 +9,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="sponsor in sponsors">
+            <tr ng-repeat="sponsor in sponsors | orderBy:'name'">
                 <td>{{sponsor.name}}</td>
                 <td>{{sponsor.email}}</td>
-                <td>{{sponsor.level}}</td>
+                <td>{{sponsor.level | levelAsText}}</td>
             </tr>
         </tbody>
     </table>

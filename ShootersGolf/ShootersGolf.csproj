@@ -113,6 +113,7 @@
     <Content Include="app\app.js" />
     <Content Include="app\controllers.js" />
     <Content Include="app\controllers\playersController.js" />
+    <Content Include="app\customFilters.js" />
     <Content Include="app\images\chad.jpg" />
     <Content Include="app\images\childrenshospital.jpg" />
     <Content Include="app\images\logo.png" />
@@ -122,6 +123,7 @@
     <Content Include="app\views\about.html" />
     <Content Include="app\views\adminHeader.html" />
     <Content Include="app\views\adminHome.html" />
+    <Content Include="app\views\adminTeamDetail.html" />
     <Content Include="app\views\adminPlayerDetail.html" />
     <Content Include="app\views\adminSponsors.html" />
     <Content Include="app\views\adminTeams.html" />
