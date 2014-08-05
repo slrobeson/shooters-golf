@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="adminApp">
+<html ng-app="golfAdmin">
 <head>
     <title>Shooter's Golf</title>
     <script src="Scripts/angular.min.js"></script>
@@ -7,16 +7,16 @@
     <script src="Scripts/angular-resource.min.js"></script>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="app/css/sticky-footer.css" rel="stylesheet" />
-    <script src="app/admin.js"></script>
-    <script src="app/adminControllers.js"></script>
-    <script src="app/customFilters.js"></script>
+    <link href="admin/css/sticky-footer.css" rel="stylesheet" />
+    <script src="admin/admin.js"></script>
+    <script src="admin/controllers.js"></script>
+    <script src="admin/customFilters.js"></script>
 </head>
-<body>
-   <div ng-include="'app/views/adminHeader.html'"></div>
+<body ng-controller="golfCtrl">
+    <div ng-include="'admin/views/header.html'"></div>
 
     <div class="container" ng-view></div>
 
-    <div ng-include="'app/views/footer.html'"></div>
+    <div ng-include="'admin/views/footer.html'"></div>
 </body>
 </html>

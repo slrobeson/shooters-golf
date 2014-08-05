@@ -1,4 +1,4 @@
-﻿angular.module("adminApp")
+﻿angular.module("golfAdmin")
     .controller("playersCtrl", function ($scope, $http, baseUrl) {
 
         $scope.players = [];

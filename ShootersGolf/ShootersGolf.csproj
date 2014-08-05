@@ -108,27 +108,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin.html" />
-    <Content Include="app\admin.js" />
-    <Content Include="app\adminControllers.js" />
+    <Content Include="admin\css\sticky-footer.css" />
+    <Content Include="admin\admin.js" />
+    <Content Include="admin\controllers.js" />
     <Content Include="app\app.js" />
     <Content Include="app\controllers.js" />
-    <Content Include="app\controllers\playersController.js" />
-    <Content Include="app\customFilters.js" />
+    <Content Include="admin\customFilters.js" />
     <Content Include="app\images\chad.jpg" />
     <Content Include="app\images\childrenshospital.jpg" />
     <Content Include="app\images\logo.png" />
     <Content Include="app\images\pdf-icon.jpg" />
     <Content Include="app\images\word-icon.gif" />
-    <Content Include="app\models.js" />
     <Content Include="app\views\about.html" />
-    <Content Include="app\views\adminHeader.html" />
-    <Content Include="app\views\adminHome.html" />
-    <Content Include="app\views\adminTeamDetail.html" />
-    <Content Include="app\views\adminPlayerDetail.html" />
-    <Content Include="app\views\adminSponsors.html" />
-    <Content Include="app\views\adminTeams.html" />
-    <Content Include="app\views\adminPlayers.html" />
+    <Content Include="admin\views\header.html" />
+    <Content Include="admin\views\home.html" />
+    <Content Include="admin\views\team.html" />
+    <Content Include="admin\views\player.html" />
+    <Content Include="admin\views\sponsors.html" />
+    <Content Include="admin\views\teams.html" />
+    <Content Include="admin\views\players.html" />
     <Content Include="app\views\confirmation.html" />
+    <Content Include="admin\views\footer.html" />
     <Content Include="app\views\footer.html" />
     <Content Include="app\views\header.html" />
     <Content Include="app\views\home.html" />
@@ -151,7 +151,6 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="app.html" />
-    <Content Include="samples.html" />
     <Content Include="Scripts\angular-resource.js" />
     <Content Include="Scripts\angular-resource.min.js" />
     <Content Include="Scripts\angular-route.js" />
