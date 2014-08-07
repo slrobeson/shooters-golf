@@ -6,24 +6,40 @@
         $http.get("http://localhost:20534/api/players")
             .success(function (data) {
                 $scope.players = data;
-            })
-            .error(function (error) {
-                $scope.data.error = error;
             });
     })
-    .controller("teamsCtrl", function ($scope, $http) {
+    .controller("teamsCtrl", function ($scope, $http, $location) {
 
         $scope.teams = [];
+        $scope.players = [];
+
+        $scope.team = team;
+
+        $scope.availablePlayers = function (player) {
+            return !player.teamName;
+        }
 
         $http.get("http://localhost:20534/api/teams")
             .success(function (data) {
                 $scope.teams = data;
-            })
-            .error(function (error) {
-                $scope.data.error = error;
             });
 
-        $scope.registerTeam = function (team) {
+        $http.get("http://localhost:20534/api/players")
+            .success(function (data) {
+                $scope.players = data;
+            });
+
+        $scope.addPlayer = function (player) {
+            if (angular.isDefined(player)) {
+                team.players.push(player);
+            }
+        };
+
+        $scope.removePlayer = function (index) {
+            team.players.splice(index, 1);
+        };
+
+        $scope.registerTeam = function () {
             $http.post("http://localhost:20534/api/teams", team)
             .success(function (data) {
                 $location.path("/teams");
@@ -37,12 +53,9 @@
         $http.get("http://localhost:20534/api/sponsors")
             .success(function (data) {
                 $scope.sponsors = data;
-            })
-            .error(function (error) {
-                $scope.data.error = error;
             });
     })
-    .controller("playerDetailCtrl", function ($scope, $http, $routeParams, $location) {
+    .controller("playerCtrl", function ($scope, $http, $routeParams, $location) {
         $scope.player = {};
         $scope.teams = {};
         $scope.availableTeams = function (item) {
@@ -80,7 +93,7 @@
             });
         };
     })
-    .controller("teamDetailCtrl", function ($scope, $http, $routeParams) {
+    .controller("teamCtrl", function ($scope, $http, $routeParams) {
         $scope.players = [];
 
         $http.get("http://localhost:20534/api/players/" + $routeParams["team"])
