@@ -8,16 +8,12 @@
                 $scope.players = data;
             });
     })
-    .controller("teamsCtrl", function ($scope, $http, $location) {
+    .controller("teamsCtrl", function ($scope, $http, $location, $filter) {
 
         $scope.teams = [];
         $scope.players = [];
-
+        $scope.availablePlayers = [];
         $scope.team = team;
-
-        $scope.availablePlayers = function (player) {
-            return !player.teamName;
-        }
 
         $http.get("http://localhost:20534/api/teams")
             .success(function (data) {
@@ -27,6 +23,11 @@
         $http.get("http://localhost:20534/api/players")
             .success(function (data) {
                 $scope.players = data;
+            });
+
+        $http.get("http://localhost:20534/api/players/available")
+            .success(function (data) {
+                $scope.availablePlayers = data;
             });
 
         $scope.addPlayer = function (player) {

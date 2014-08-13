@@ -1,0 +1,4 @@
+﻿var team = {
+    name: "",
+    players: []
+};

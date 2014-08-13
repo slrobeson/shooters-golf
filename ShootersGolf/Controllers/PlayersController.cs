@@ -42,6 +42,16 @@ namespace ShootersGolf.Controllers
             }
         }
 
+        [Route("available")]
+        [HttpGet]
+        public IList<Player> GetAvailable()
+        {
+            using (var session = Global.DocumentStore.OpenSession())
+            {
+                return session.Query<Player>().Where(x => x.TeamName == null).ToList();
+            }
+        }
+
         [HttpPut]
         public HttpResponseMessage Put(Player player)
         {

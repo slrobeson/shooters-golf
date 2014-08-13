@@ -1,4 +1,4 @@
-﻿angular.module("golfApp", ["ngRoute"])
+﻿angular.module("golfApp", ["ngRoute", "ui.bootstrap"])
     .constant("baseUrl", "http://localhost:20534/api/")
     .config(function ($routeProvider) {
         $routeProvider.when("/about", {

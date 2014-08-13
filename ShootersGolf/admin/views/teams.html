@@ -18,56 +18,58 @@
         </table>
     </div>
 
-    <h4>Create New Team</h4>
+    <div ng-hide="availablePlayers.length == 0">
+        <h4>Create New Team</h4>
 
-    <form name="teamForm" novalidate>
-        <div class="well">
-            <div class="form-group">
-                <label>Team Name:</label>
-                <input name="teamName" class="form-control" ng-model="team.name" required />
-            </div>
+        <form name="teamForm" novalidate>
+            <div class="well">
+                <div class="form-group">
+                    <label>Team Name:</label>
+                    <input name="teamName" class="form-control" ng-model="team.name" required />
+                </div>
 
-            <div><label>Add Player:</label></div>
-            <table class="table">
-                <tr>
-                    <td>
-                        <select class="form-control" ng-model="selectValue" ng-options="player.lastName + ', ' + player.firstName for player in players | filter:availablePlayers | orderBy:'lastName'">
-                            <option value="">(Pick One)</option>
-                        </select>
-                    </td>
-                    <td><button ng-click="addPlayer(selectValue)" class="btn btn-success">Add</button></td>
-                </tr>
-            </table>
-
-            <div ng-hide="team.players.length == 0">
-                <br />
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>E-Mail</th>
-                            <th>T-Shirt</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="player in team.players">
-                            <td>{{player.firstName}}</td>
-                            <td>{{player.lastName}}</td>
-                            <td>{{player.email}}</td>
-                            <td>{{player.shirtsize}}</td>
-                            <td>
-                                <button ng-click="removePlayer($index)" class="btn btn-sm btn-warning">Remove</button>
-                            </td>
-                        </tr>
-                    </tbody>
+                <div><label>Add Player:</label></div>
+                <table class="table">
+                    <tr>
+                        <td>
+                            <select class="form-control" ng-model="selectValue" ng-options="player.lastName + ', ' + player.firstName for player in availablePlayers | orderBy:'lastName'">
+                                <option value="">(Pick One)</option>
+                            </select>
+                        </td>
+                        <td><button ng-click="addPlayer(selectValue)" class="btn btn-success">Add</button></td>
+                    </tr>
                 </table>
-            </div>
-        </div>
 
-        <div class="pull-right">
-            <button type="submit" ng-click="registerTeam()" class="btn btn-default" ng-disabled="team.players.length < 1">Register Team</button>
-        </div>
-    </form>
+                <div ng-hide="team.players.length == 0">
+                    <br />
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>E-Mail</th>
+                                <th>T-Shirt</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="player in team.players">
+                                <td>{{player.firstName}}</td>
+                                <td>{{player.lastName}}</td>
+                                <td>{{player.email}}</td>
+                                <td>{{player.shirtsize}}</td>
+                                <td>
+                                    <button ng-click="removePlayer($index)" class="btn btn-sm btn-warning">Remove</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="pull-right">
+                <button type="submit" ng-click="registerTeam()" class="btn btn-default" ng-disabled="team.players.length < 1">Register Team</button>
+            </div>
+        </form>
+    </div>
 </div>
